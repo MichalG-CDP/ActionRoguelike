@@ -23,10 +23,10 @@ public:
 protected:
 
 	UPROPERTY(VisibleAnywhere)
-		TObjectPtr<UStaticMeshComponent> MeshComp;
+	UStaticMeshComponent* MeshComp;
 
-	UPROPERTY(VisibleAnywhere)
-		TObjectPtr<URadialForceComponent> ForceComp;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	URadialForceComponent* ForceComp;
 
 	virtual void PostInitializeComponents() override;
 
