@@ -46,6 +46,7 @@ void ASExplosiveBarrel::PostInitializeComponents()
 
 void ASExplosiveBarrel::OnActorHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
+	
 	ForceComp->FireImpulse();
 
 	UE_LOG(LogTemp, Log, TEXT("OnActorHit in ExplosiveBarrel"));
@@ -54,5 +55,5 @@ void ASExplosiveBarrel::OnActorHit(UPrimitiveComponent* HitComponent, AActor* Ot
 
 	FString CombinedString = FString::Printf(TEXT("Hit at location: %s"), *Hit.ImpactPoint.ToString());
 	DrawDebugString(GetWorld(), Hit.ImpactPoint, CombinedString, nullptr, FColor::Green, 2.0f, true);
-
+	
 }
